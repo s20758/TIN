@@ -1,0 +1,29 @@
+#pic1, #pic3 {
+    float: left;
+    width: 80px;
+}
+
+#pic2 {
+    float: right;
+    width: 80px;
+}
+
+#p1, #p2 {
+    width: 100%;
+    text-align: justify;
+}
+
+#p3 {
+    text-align: center;
+}
+
+.columns:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.floating {
+    float: left;
+    width: 50%;
+}
