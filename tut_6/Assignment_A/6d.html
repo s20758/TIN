@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>6d</title>
+    <script src="6d.js"></script>
+</head>
+<body>
+<form>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Name</span>
+        </div>
+        <input type="text" class="form-control" id="name" required/>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Age</span>
+        </div>
+        <input type="number" class="form-control" id="age" required/>
+    </div>
+    <br>
+    <button type="button" class="btn btn-primary" onclick="addRow()">Add a row</button>
+</form>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Rex</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>Rob</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Rue</td>
+            <td>5</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -6,7 +6,7 @@ let factorial_r = function(n) {
     }
     res = n*factorial_r(--n);
     return res;
-}
+};
 
 //function declaration
 function factorial_i(n) {

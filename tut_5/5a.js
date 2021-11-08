@@ -8,7 +8,7 @@ const student = {
     getId: function() {
         console.log(this.name + "'s id is " + this.id);
     }
-}
+};
 
 function getProperties(obj) {
     let arr = new Array();

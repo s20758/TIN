@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>6a</title>
+    <script src="6a.js"></script>
+</head>
+<body>
+<form>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Celsius</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Celsius" id="cels_input" 
+            onchange="setChanged_input(cels_input)"/>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Fahrenheit</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Fahrenheit" id="fahr_input" 
+            onchange="setChanged_input(fahr_input)"/>
+    </div>
+    <br>
+    <button type="button" class="btn btn-primary" onclick="convert()">Convert</button>
+</form>
+</body>
+</html>
