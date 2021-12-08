@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutorial 9</title>
+</head>
+<body>
+    <form>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">First number</span>
+            </div>
+            <input type="number" class="form-control" placeholder="First number" id="num1" name="num1" required/>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Second number</span>
+            </div>
+            <input type="number" class="form-control" placeholder="Second number" id="num2" name="num2" required/>
+        </div>
+        <div class="form-group">
+            <label>Operation</label>
+            <select class="form-control" id="oper" name="oper">
+                <option value="add">Add</option>
+                <option value="sub">Subtract</option>
+                <option value="mul">Multiply</option>
+                <option value="div">Divide</option>
+            </select>
+        </div>
+    </form>
+    <button type="submit" class="btn btn-primary" onclick="calculate()">Submit</button>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Result</span>
+        </div>
+        <input class="form-control" placeholder="Result" id="result" readonly></input>
+    </div>
+</body>
+<script type="text/javascript">
+    const num1 = document.getElementById("num1");
+    const num2 = document.getElementById("num2");
+    const oper = document.getElementById("oper");
+    const result = document.getElementById("result");
+
+    let request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            result.value = JSON.parse(request.responseText).result;
+        }
+    };
+
+    function calculate() {
+        result.value = "";
+        request.open("POST", "http://localhost:1234/calculator", true);
+        request.setRequestHeader("Content-Type", "application/json");
+        request.send(JSON.stringify({
+            num1: num1.value,
+            num2: num2.value,
+            oper: oper.value
+        }));
+    }
+</script>
+</html>
